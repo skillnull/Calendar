@@ -316,7 +316,7 @@ var Canlendar = (function () {
                         lunarDayObj.innerHTML = solarFestival;
                         _lunarFestival = solarFestival;
                     }
-                    if ((_lunarFestival != null) && (_solarFestival != null)) {
+                    if ((_lunarFestival !== null) && (_solarFestival !== null)) {
                         lunarDayObj.innerHTML = _lunarFestival + "/" + _solarFestival;
                     }
                 } else { // 不在当前日期表中显示
@@ -342,6 +342,5 @@ var Canlendar = (function () {
         }
     }
 })();
-
 
 
