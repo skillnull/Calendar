@@ -8,9 +8,9 @@
 <body onload=Canlendar.initial()>
 <div class="calendar-warp">
     <form name="myCalendar">
-        <table border=1 cellpadding="0" cellspacing="0" bordercolordark="#e0e0e0" bordercolor="#e0e0e0" bordercolorlight="#e0e0e0">
+        <table border="1" cellpadding="0" cellspacing="0" bordercolordark="#e0e0e0" bordercolor="#e0e0e0" bordercolorlight="#e0e0e0">
             <tr class="calendar-top-box">
-                <td colSpan=7>
+                <td colSpan="7">
                     <span class="calendar-top">
                         <span>公历</span>
                         <select name="SolarYear" onchange="Canlendar.changeCalendar()">
@@ -47,8 +47,8 @@
                     gNum = i * 7 + j;
                     document.write('<td id="dayBox' + gNum + '">' +
                         '<font id="SolarDay' + gNum + '" class="calendar-solar-day"');
-                    if (j == 0) document.write('color=red');
-                    if (j == 6) document.write('color=red');
+                    if (j == 0) document.write('color=#828282');
+                    if (j == 6) document.write('color=#828282');
                     document.write('> </font><br>' +
                         '<font id="LunarDay' + gNum + '" class="calendar-lunar-day"> </font>' +
                         '</td>');

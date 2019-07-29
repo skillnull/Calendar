@@ -46,8 +46,8 @@ var Canlendar = (function () {
         todayDay: new Date().getDate(), // 今天是哪一日
         todayMonth: new Date().getMonth(), // 今天是哪一月
         todayYear: new Date().getFullYear(), // 今天是哪一年
-        MothersDay: 9, // 母亲节
-        FathersDay: 9, // 父亲节
+        MothersDay: 0, // 母亲节
+        FathersDay: 0, // 父亲节
         monthPlusOne: '', // 保存y年m+1月的相关信息
         calendar: '' // 在表格中显示阳历和农历的日期,以及相关节日
     }
@@ -192,10 +192,10 @@ var Canlendar = (function () {
             solarDateObj = new Date(year, month, 1); // 当月第一天的日期
             this.length = functionLibrary.solarDays(year, month); // 阳历当月天数
             this.solarFirstDayWhatDay = solarDateObj.getDay(); // 阳历当月1号星期几
-            if ((month + 1) === 5) {
+            if (month + 1 === 5) {
                 dataLibrary.MothersDay = solarDateObj.getDay()
             }
-            if ((month + 1) === 6) {
+            if (month + 1 === 6) {
                 dataLibrary.FathersDay = solarDateObj.getDay()
             }
             for (var i = 0; i < this.length; i++) {
@@ -250,8 +250,7 @@ var Canlendar = (function () {
                     solarDayObj.innerHTML = item + 1;
                     if (dataLibrary.calendar[item].isToday) { // 今日颜色
                         solarDayObj.style.color = 'red';
-                        solarDayObj.style.fontWeight = '700';
-                        solarDayObj.style.textShadow = '0px 2px 10px #e0e0e0';
+                        solarDayObj.style.fontWeight = '400';
                     } else { // 其他日期颜色
                         solarDayObj.style.color = '';
                     }
@@ -275,34 +274,34 @@ var Canlendar = (function () {
                         }
                     }
                     for (var _j = 0; _j < solarFestival.length; _j++) { // 阳历节日
-                        if (parseInt(solarFestival[_j].substr(0, 2)) === (SolarMonth + 1)) {
-                            if (parseInt(solarFestival[_j].substr(2, 4)) === (item + 1)) {
+                        if (parseInt(solarFestival[_j].substr(0, 2)) === SolarMonth + 1) {
+                            if (parseInt(solarFestival[_j].substr(2, 4)) === item + 1) {
                                 lunarDayObj.innerHTML = solarFestival[_j].substr(5);
                                 _solarFestival = solarFestival[_j].substr(5);
                             }
                         }
                     }
-                    if ((SolarMonth + 1) === 5) { // 母亲节
+                    if (SolarMonth + 1 === 5) { // 母亲节
                         if (dataLibrary.MothersDay === 0) {
-                            if ((item + 1) === 7) {
+                            if (item + 1 === 7) {
                                 _solarFestival = "母亲节";
-                                lunarDayObj.innerHTML = "母亲节"
+                                lunarDayObj.innerHTML = "母亲节";
                             }
                         } else if (dataLibrary.MothersDay < 9) {
-                            if ((item + 1) === ((7 - dataLibrary.MothersDay) + 8)) {
+                            if (item + 1 === 7 - dataLibrary.MothersDay + 8) {
                                 _solarFestival = "母亲节";
-                                lunarDayObj.innerHTML = "母亲节"
+                                lunarDayObj.innerHTML = "母亲节";
                             }
                         }
                     }
-                    if ((SolarMonth + 1) === 6) { // 父亲节
+                    if (SolarMonth + 1 === 6) { // 父亲节
                         if (dataLibrary.FathersDay === 0) {
-                            if ((item + 1) === 14) {
+                            if (item + 1 === 14) {
                                 _solarFestival = "父亲节";
                                 lunarDayObj.innerHTML = "父亲节"
                             }
                         } else if (dataLibrary.FathersDay < 9) {
-                            if ((item + 1) === ((7 - dataLibrary.FathersDay) + 15)) {
+                            if (item + 1 === 7 - dataLibrary.FathersDay + 15) {
                                 _solarFestival = "父亲节";
                                 lunarDayObj.innerHTML = "父亲节"
                             }
@@ -316,7 +315,7 @@ var Canlendar = (function () {
                         lunarDayObj.innerHTML = solarFestival;
                         _lunarFestival = solarFestival;
                     }
-                    if ((_lunarFestival !== null) && (_solarFestival !== null)) {
+                    if (_lunarFestival !== null && _solarFestival !== null) {
                         lunarDayObj.innerHTML = _lunarFestival + "/" + _solarFestival;
                     }
                 } else { // 不在当前日期表中显示
