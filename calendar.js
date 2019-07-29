@@ -237,9 +237,9 @@ var Canlendar = (function () {
         calendarFestival: function (SolarYear, SolarMonth) {
             dataLibrary.calendar = new functionLibrary.calendarDate(SolarYear, SolarMonth);
             Animal.innerHTML = '&nbsp;' + dataLibrary.AnimalsArr[(SolarYear - 4) % 12] + '年&nbsp;'; // 生肖
-            var _lunarFestival = null; // 农历节日
-            var _solarFestival = null; // 阳历节日
             for (var i = 0; i < 42; i++) {
+                var _lunarFestival = null; // 农历节日
+                var _solarFestival = null; // 阳历节日
                 var solarDayObj = eval('SolarDay' + i);
                 var lunarDayObj = eval('LunarDay' + i);
                 solarDayObj.className = '';
@@ -285,12 +285,12 @@ var Canlendar = (function () {
                         if (dataLibrary.MothersDay === 0) {
                             if (item + 1 === 7) {
                                 _solarFestival = "母亲节";
-                                lunarDayObj.innerHTML = "母亲节";
+                                lunarDayObj.innerHTML = '<span style="color:green;">母亲节</span>';
                             }
                         } else if (dataLibrary.MothersDay < 9) {
                             if (item + 1 === 7 - dataLibrary.MothersDay + 8) {
                                 _solarFestival = "母亲节";
-                                lunarDayObj.innerHTML = "母亲节";
+                                lunarDayObj.innerHTML = '<span style="color:green;">母亲节</span>';
                             }
                         }
                     }
@@ -298,18 +298,18 @@ var Canlendar = (function () {
                         if (dataLibrary.FathersDay === 0) {
                             if (item + 1 === 14) {
                                 _solarFestival = "父亲节";
-                                lunarDayObj.innerHTML = "父亲节"
+                                lunarDayObj.innerHTML = '<span style="color:green;">父亲节</span>'
                             }
                         } else if (dataLibrary.FathersDay < 9) {
                             if (item + 1 === 7 - dataLibrary.FathersDay + 15) {
                                 _solarFestival = "父亲节";
-                                lunarDayObj.innerHTML = "父亲节"
+                                lunarDayObj.innerHTML = '<span style="color:green;">父亲节</span>'
                             }
                         }
                     }
                     if (solarFestival.length <= 0) { // 设置节气的颜色
                         solarFestival = dataLibrary.calendar[item].solarTerms;
-                        if (solarFestival.length > 0) solarFestival = solarFestival.fontcolor('#8fad8f');
+                        if (solarFestival.length > 0) solarFestival = solarFestival.fontcolor('green');
                     }
                     if (solarFestival.length > 0) {
                         lunarDayObj.innerHTML = solarFestival;
