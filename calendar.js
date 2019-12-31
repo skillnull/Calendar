@@ -340,6 +340,6 @@ var Canlendar = (function () {
             functionLibrary.calendarFestival(dataLibrary.todayYear, dataLibrary.todayMonth);
         }
     }
-})();
+})()
 
 
