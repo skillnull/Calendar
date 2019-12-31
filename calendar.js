@@ -226,9 +226,6 @@ var Canlendar = (function () {
             whatDay_2 = functionLibrary.solarTermFun(year, month * 2 + 1) - 1;
             this[whatDay_1].solarTerms = dataLibrary.solarTerm[month * 2];
             this[whatDay_2].solarTerms = dataLibrary.solarTerm[month * 2 + 1];
-            if ((this.solarFirstDayWhatDay + 12) % 7 === 5) { // 黑色星期五
-                this[12].solarFestival += '黑色星期五';
-            }
             if (year === dataLibrary.todayYear && month === dataLibrary.todayMonth) { // 今日
                 this[dataLibrary.todayDay - 1].isToday = true;
             }
