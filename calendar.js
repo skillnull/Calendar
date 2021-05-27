@@ -247,14 +247,19 @@ var Canlendar = (function () {
                     solarDayObj.innerHTML = item + 1;
                     if (dataLibrary.calendar[item].isToday) { // 今日颜色
                         solarDayObj.style.color = 'red';
-                        solarDayObj.style.fontWeight = '400';
+                        solarDayObj.style.fontWeight = '900';
+                        solarDayObj.style.borderBottom = 'thin solid red';
                     } else { // 其他日期颜色
                         solarDayObj.style.color = '';
+                        solarDayObj.style.fontWeight = '';
+                        solarDayObj.style.borderBottom = '';
                     }
-                    if (dataLibrary.calendar[item].lunarDay === 1) { // 显示农历月
-                        lunarDayObj.innerHTML = '<b>' + (dataLibrary.calendar[item].isLeap ? '闰' : '') + dataLibrary.calendar[item].lunarMonth + '月' + (functionLibrary.monthDays(dataLibrary.calendar[item].lunarYear, dataLibrary.calendar[item].lunarMonth) === 29 ? '小' : '大') + '</b>';
+                    if (functionLibrary.ChineseDay(dataLibrary.calendar[item].lunarDay) === '初一') { // 显示农历月
+                        lunarDayObj.innerHTML = (dataLibrary.calendar[item].isLeap ? '闰' : '') + dataLibrary.calendar[item].lunarMonth + '月' + (functionLibrary.monthDays(dataLibrary.calendar[item].lunarYear, dataLibrary.calendar[item].lunarMonth) === 29 ? '小' : '大');
+                        lunarDayObj.style.borderBottom = 'thin solid black';
                     } else {
                         lunarDayObj.innerHTML = functionLibrary.ChineseDay(dataLibrary.calendar[item].lunarDay);
+                        lunarDayObj.style.borderBottom = '';
                     }
                     for (var j = 0; j < lunarFestival.length; j++) { // 农历节日
                         if (parseInt(lunarFestival[j].substr(0, 2)) === (dataLibrary.calendar[item].lunarMonth)) {
