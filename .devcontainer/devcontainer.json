@@ -1,2 +1,7 @@
 {
+	"image": "python:alpine",
+
+	"postStartCommand": ["python3", "-m", "http.server", "3000"],
+
+	"forwardPorts": [3000]
 }
