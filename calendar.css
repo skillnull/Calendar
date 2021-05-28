@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'Ma Shan Zheng';
-    src: url('./fonts/MaShanZheng-Regular.ttf') format('embedded-opentype'), /* Internet Explorer */
-    url('./fonts/MaShanZheng-Regular.ttf') format('woff2'), /* Super Modern Browsers */
-    url('./fonts/MaShanZheng-Regular.ttf') format('woff'), /* Pretty Modern Browsers */
-    url('./fonts/MaShanZheng-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-    url('./fonts/MaShanZheng-Regular.ttf') format('svg'); /* Legacy iOS */
+    font-family: 'Shi Hui Ti';
+    src: url('./fonts/Yang-Rendong-Regular.ttf') format('embedded-opentype'), /* Internet Explorer */
+    url('./fonts/Yang-Rendong-Regular.ttf') format('woff2'), /* Super Modern Browsers */
+    url('./fonts/Yang-Rendong-Regular.ttf') format('woff'), /* Pretty Modern Browsers */
+    url('./fonts/Yang-Rendong-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('./fonts/Yang-Rendong-Regular.ttf') format('svg'); /* Legacy iOS */
 }
 
 html, body {
@@ -13,6 +13,8 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    font-family: monospace, 'Shi Hui Ti';
+    font-weight: 400;
 }
 
 .calendar-warp {
@@ -28,7 +30,6 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     position: fixed;
-    font-weight: 400;
     min-width: 444px;
     min-height: 379px;
 }
@@ -36,16 +37,15 @@ html, body {
 .calendar-warp table .calendar-top-box {
     background-color: #e0e0e0;
     line-height: 1;
-    font-family: 'Ma Shan Zheng';
 }
 
 .calendar-warp table .calendar-top-box td {
     padding: .4em 0;
+    font-size: 18px;
 }
 
 .calendar-warp table .calendar-top-box td .calendar-top {
-    color: #333333;
-    font-size: 16px;
+    color: #000000;
     padding: 0 1em;
     margin: 0;
 }
@@ -53,15 +53,16 @@ html, body {
 .calendar-warp table .calendar-top-box td .calendar-top > select {
     background-color: inherit;
     border: 0;
-    font-weight: 100;
-    font-size: 14px;
     font-family: monospace;
+    font-weight: 100;
+    font-size: 16px;
 }
 
 .calendar-warp table .calendar-top-box td .calendar-Animal {
-    color: #333333;
-    font-weight: 800;
-    font-size: 16px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 1000;
+    float: right;
 }
 
 .calendar-warp table .calendar-week {
@@ -70,7 +71,7 @@ html, body {
 
 .calendar-warp table .calendar-week td {
     font-size: 16px;
-    font-family: 'Ma Shan Zheng';
+    font-weight: 700;
     width: 60px;
     padding: .4em 0;
 }
@@ -89,7 +90,6 @@ html, body {
 }
 
 .calendar-warp table .calendar-solar-day-tr td {
-    font-family: monospace;
     font-size: 16px;
     max-width: 60px;
     overflow: hidden;
@@ -98,10 +98,9 @@ html, body {
 }
 
 .calendar-warp table .calendar-solar-day-tr td .calendar-lunar-day {
-    font-family: monospace, 'Ma Shan Zheng';
     font-weight: 100;
     font-size: 14px;
-    color: rgb(83, 83, 83);
+    color: #000000;
     padding: 0;
     margin: 0;
 }
