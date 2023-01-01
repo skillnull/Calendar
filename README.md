@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.skillnull.com"><img src="https://skillnull.com/others/images/brand/MIT.svg" alt="License MIT"></a>
+  <a href="http://www.skillnull.com"><img src="http://skillnull.com/others/images/brand/MIT.svg" alt="License MIT"></a>
 </p>
 
 ### **<p align="center">Calendar :date: </p>**
