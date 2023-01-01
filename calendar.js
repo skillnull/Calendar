@@ -234,7 +234,8 @@ var Canlendar = (function () {
     calendarFestival: function (SolarYear, SolarMonth) {
       dataLibrary.calendar = new functionLibrary.calendarDate(SolarYear, SolarMonth);
       var today = new Date().getDate()
-      Animal.innerHTML = '&nbsp;' + dataLibrary.AnimalsArr[(dataLibrary.calendar[today - 1].lunarYear - 4) % 12] + '年&nbsp;'; // 生肖
+
+      // Animal.innerHTML = '&nbsp;' + dataLibrary.AnimalsArr[(dataLibrary.calendar[today - 1].lunarYear - 4) % 12] + '年&nbsp;'; // 生肖
 
       for (var i = 0; i < 42; i++) {
         var _lunarFestival = null; // 农历节日
